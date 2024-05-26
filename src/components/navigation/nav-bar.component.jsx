@@ -4,9 +4,13 @@ import "./nav-bar.styles.scss";
 
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import { UserContext } from "../../contexts/user.context";
+import { CartContext } from "../../contexts/cart.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
+import CartIcon from "../cart-icon/cart-icon.component";
+import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 const NavBar = () => {
   const { currentUser } = useContext(UserContext);
+  const { isCartOpen } = useContext(CartContext);
 
   return (
     <div className="nav-bar">
@@ -30,9 +34,9 @@ const NavBar = () => {
             Sign In
           </Link>
         )}
+        <CartIcon />
       </div>
-
-      {/* <Outlet /> */}
+      {isCartOpen && <CartDropdown />}
     </div>
   );
 };
