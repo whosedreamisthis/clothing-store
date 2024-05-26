@@ -19,10 +19,6 @@ const Authenticate = () => {
   // };
   return (
     <div className="sign-in-and-up-container">
-      {/* <button onClick={signInWithGoogleRedirect}>
-        Sign in with Google Redirect
-      </button> */}
-
       <SignInForm logUser={logGoogleUser}></SignInForm>
       <SignUpForm></SignUpForm>
     </div>
